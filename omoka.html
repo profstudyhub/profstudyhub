@@ -1,0 +1,102 @@
+
+<doctype html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-compatible" content="IE=edge">
+  <meta name="viewport" content="device-width, initial-scale=1.0'
+  <title> lucky spin  </title>
+ </head>
+  <body>
+      <div class="mainbox" id="mainbox">
+	     <div class="box"  id="box">
+		      <div class="box1">
+			     <span class="font span1"><h5>smart tv 34 </h5></span>
+				 <span class="font span1"><h5>smart tv 34 </h5></span>
+				 <span class="font span1"><h5>smart tv 34 </h5></span>
+				 <span class="font span1"><h5>smart tv 34 </h5></span>
+				 <span class="font span1"><h5>smart tv 34 </h5></span>
+				 <span class="font span1"><h5>smart tv 34 </h5></span>
+				 <span class="font span1"><h5>smart tv 34 </h5></span>
+				   </div>
+			     </div>
+			</div>
+</body>
+</html>
+			
+
+    <script>
+      var wheel = document.getElementById("wheel");
+      var sectors = document.querySelectorAll(".sector");
+
+      wheel.addEventListener("click", spin);
+
+      function spin() {
+        var today = new Date();
+        var dayOfTheWeek = today.getDay(); // returns a number between 0-6
+        var value;
+
+        if (dayOfTheWeek == 1) {
+          // spin the wheel and land in ksh 100
+          value = 100;
+        } else {
+          // spin the wheel and land in ksh 1 or ksh 10
+          var rnd = Math.floor(Math.random() * 2); // returns a number between 0-1
+          if (rnd == 0) {
+            value = 1;
+          } else {
+            value = 10;
+          }
+        }
+
+        for (var i = 0; i < sectors.length; i++) {
+          if (sectors[i].getAttribute("data-value") == value) {
+            sectors[i].classList.add("active");
+          } else {
+            sectors[i].classList.remove("active");
+          }
+        }
+      }
+      //call spin():
+      spin();
+    </script>
+  </body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Website</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+	<div class="logo">
+		<h1>My Website</h1>
+	</div>
+
+	<div class="menu">
+		<ul>
+			<li>Home</li>
+			<li>About Us</li>
+			<li>Services</li>
+			<li>Contact</li>
+		</ul>
+	</div>
+
+	<div class="content">
+		<h2>Welcome to My Website!</h2>
+		<p>This is a website like Safaricom that functions the same way Safaricom does. Here, you can do things like: </p>
+		<ul>
+			<li>Buy airtime</li>
+			<li>Pay bills</li>
+			<li>Send and receive money</li>
+			<li>Check your account balance</li>
+			<li>And much more!</li>
+		</ul>
+	</div>
+
+</body>
+</html>
